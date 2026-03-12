@@ -1,0 +1,66 @@
+.raffle {
+    min-height: 100vh;
+    padding: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.raffle-result-text {
+    font-size: 70px;
+}
+
+.raffle-title {
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400;
+    font-family: Inter;
+}
+
+.raffle__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.raffle__winners {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.raffle__winners__winner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.raffle__winners__winner img {
+    max-width: 100px;
+    max-height: 150px;
+}
+
+.code {
+    background-color: var(--col-yellow);
+    padding: 5px;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--col-black);
+    min-height: 40px;
+    min-width: 140px;
+    font-weight: 600;
+}
+
+.end-raffle-btn {
+    background-color: var(--col-white) !important;
+}

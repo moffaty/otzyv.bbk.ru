@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Form {
+  id         Int     @id @default(autoincrement())
+  caption    String
+  photo      Json[]
+  code       String
+  isSelected Boolean @default(false)
+  checked    Boolean @default(false)
+}

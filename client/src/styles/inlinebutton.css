@@ -1,0 +1,54 @@
+.inline-button {
+    height: 65px;
+    min-width: 200px;
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid var(--col-blue);
+    color: var(--col-blue);
+    background-color: var(--col-white);
+    font-size: var(--size-normal);
+    font-weight: 200;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.inline-error {
+    border: 2px solid rgb(160, 7, 7) !important;
+    background-color: rgba(243, 197, 197, 0.3) !important;
+    color: rgb(160, 7, 7) !important;
+}
+
+.inline-button:hover {
+    background-color: #33a9e09f;
+    color: var(--col-white);
+    transition: 0.2s ease;
+}
+
+.inline-button:active {
+    background-color: #2984af9f;
+    border-color: #2984afc2;
+}
+
+.inline-button-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+@media screen and (max-width: 1300px) {
+    .inline-button {
+        height: 50px;
+        min-width: 200px;
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid var(--col-blue);
+        color: var(--col-blue);
+        background-color: var(--col-white);
+        font-size: var(--tablet-size-normal);
+        font-weight: 200;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+}

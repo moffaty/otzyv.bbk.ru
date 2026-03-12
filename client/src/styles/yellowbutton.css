@@ -1,0 +1,70 @@
+.yellow-button {
+    text-transform: uppercase;
+    background-color: var(--col-yellow);
+    border-radius: 32px;
+    border: 2px solid var(--col-black);
+    padding: 12px 36px;
+    font-size: var(--size-button);
+
+    -webkit-box-shadow: -5px 5px 0px 0px var(--col-black);
+    -moz-box-shadow: -5px 5px 0px 0px var(--col-black);
+    box-shadow: -5px 5px 0px 0px var(--col-black);
+
+    cursor: pointer;
+
+    transition: 0.1s ease;
+    color: var(--col-black);
+}
+
+.yellow-button:disabled {
+    background-color: #e8df63;
+    cursor: default;
+    pointer-events: none;
+    -webkit-box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+    -moz-box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+    box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+}
+
+.yellow-button:hover {
+    background-color: #e8df63;
+}
+
+.yellow-button:active {
+    transform: translate(-2.5px, 2.5px);
+    -webkit-box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+    -moz-box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+    box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+}
+
+@media screen and (max-width: 1300px) {
+    .yellow-button {
+        text-transform: uppercase;
+        background-color: var(--col-yellow);
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: var(--tabet-size-button);
+
+        -webkit-box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+        -moz-box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+        box-shadow: -2.5px 2.5px 0px 0px var(--col-black);
+
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.1s ease;
+    }
+
+    .yellow-button:active {
+        transform: translate(-1px, 1px);
+        -webkit-box-shadow: -1px 1px 0px 0px var(--col-black);
+        -moz-box-shadow: -1px 1px 0px 0px var(--col-black);
+        box-shadow: -1px 1px 0px 0px var(--col-black);
+    }
+    .yellow-button:disabled {
+        background-color: #e8df63;
+        cursor: default;
+        pointer-events: none;
+        -webkit-box-shadow: -1px 1px 0px 0px var(--col-black);
+        -moz-box-shadow: -1px 1px 0px 0px var(--col-black);
+        box-shadow: -1px 1px 0px 0px var(--col-black);
+    }
+}

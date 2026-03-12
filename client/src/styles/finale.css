@@ -1,0 +1,78 @@
+.finale {
+    height: 100vh;
+    padding: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.finale__container {
+    display: flex;
+    flex-direction: column;
+}
+.finale__container__dialogue {
+    background-color: var(--col-yellow);
+    height: fit-content;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.finale__icon-holder {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.finale__sub {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.finale-title {
+    color: var(--col-blue);
+    font-weight: 800;
+    line-height: 110px;
+    font-size: 64px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+.forms__item__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.forms__item__text {
+    margin: 0px;
+    padding: 0px;
+}
+
+.forms__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.forms__item__row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+}
+
+.forms__item__row button {
+    width: 100%;
+}

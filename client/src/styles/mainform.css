@@ -1,0 +1,125 @@
+.main-form {
+    width: 100%;
+    padding: 60px 10%;
+    gap: 50px;
+    /* overflow: scroll; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dialogue-bg {
+    background-color: var(--col-white);
+    color: var(--col-black);
+    -webkit-box-shadow: -5px 5px 0px 0px var(--col-black);
+    -moz-box-shadow: -5px 5px 0px 0px var(--col-black);
+    box-shadow: -5px 5px 0px 0px var(--col-black);
+    border-radius: 20px;
+    border: 2px solid var(--col-black);
+    padding: 50px 20px;
+    gap: 20px;
+}
+
+.form-bg {
+    background-color: var(--col-white);
+    color: var(--col-black);
+
+    border-radius: 20px;
+    border: 2px solid var(--col-black);
+
+    padding: 50px 20px;
+    gap: 20px;
+
+    -webkit-box-shadow: -5px 5px 0px 0px var(--col-black);
+    -moz-box-shadow: -5px 5px 0px 0px var(--col-black);
+    box-shadow: -5px 5px 0px 0px var(--col-black);
+
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+}
+
+.form-bg-reverse {
+    background-color: var(--col-white);
+    color: var(--col-black);
+
+    border-radius: 20px;
+    border: 2px solid var(--col-black);
+
+    padding: 50px 20px;
+    gap: 20px;
+
+    width: 100%;
+
+    -webkit-box-shadow: 5px 5px 0px 0px var(--col-black);
+    -moz-box-shadow: 5px 5px 0px 0px var(--col-black);
+    box-shadow: 5px 5px 0px 0px var(--col-black);
+
+    display: flex;
+    flex-direction: row;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100% !important;
+}
+
+.wrap > * {
+    flex: 0 0 calc(50% - 20px);
+}
+
+@media screen and (max-width: 1300px) {
+    .wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 10px;
+        width: 100% !important;
+        flex-wrap: wrap;
+    }
+
+    .wrap > * {
+        flex: 0 0 calc(100%);
+    }
+
+    .order-box > :nth-child(4) {
+        order: 1;
+    }
+
+    .order-box > :nth-child(2) {
+        order: -1;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-form {
+        width: 100%;
+        padding: 60px 20px;
+        padding-top: 100px;
+        gap: 150px;
+        /* overflow: scroll; */
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+.photo-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
