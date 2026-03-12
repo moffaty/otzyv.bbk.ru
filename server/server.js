@@ -176,6 +176,23 @@ app.post('/api/newform', async (req, res) => {
             },
         })
 
+        const ip =
+            req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
+            req.socket?.remoteAddress ||
+            'unknown'
+
+        await prisma.consentLog.create({
+            data: {
+                ipAddress: ip,
+                consentPersonal: req.body.consentPersonal === true,
+                consentContest: req.body.consentContest === true,
+                consentDelivery: req.body.consentDelivery === true,
+                policyVersion: 'privacy-policy_v1.0',
+                formUrl: req.body.formUrl || '/',
+                formCode: newForm.code,
+            },
+        })
+
         return res.status(200).json(newForm)
     } catch (e) {
         console.log(e)

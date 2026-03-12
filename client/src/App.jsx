@@ -8,6 +8,9 @@ import Footer from './components/Footer'
 import Admin from './pages/Admin'
 import Raffle from './pages/Raffle'
 import Finale from './pages/Finale'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import ContestRules from './pages/ContestRules'
+import ConsentDelivery from './pages/ConsentDelivery'
 
 function App() {
     return (
@@ -22,6 +25,9 @@ function App() {
                         <Route path='/admin' element={<Admin />} />
                         <Route path='/raffle' element={<Raffle />} />
                         <Route path='/finale' element={<Finale />} />
+                        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                        <Route path='/contest-rules' element={<ContestRules />} />
+                        <Route path='/consent-delivery' element={<ConsentDelivery />} />
                     </Routes>
                     <Footer />
                 </div>

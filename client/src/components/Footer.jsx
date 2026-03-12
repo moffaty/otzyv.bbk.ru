@@ -25,13 +25,10 @@ function Footer() {
             </div>
             <div className='footer-container'>
                 <div className='footer-text'>
-                    <Link to='https://otzyv.bbk.ru/conditions' target='_blank'>
+                    <Link to='/contest-rules' target='_blank'>
                         Условия конкурса и правила выдачи призов
                     </Link>
-                    <Link
-                        to='https://otzyv.bbk.ru/politika_v_otnoshenii_obrabotki_personalnyh_dannyh'
-                        target='_blank'
-                    >
+                    <Link to='/privacy-policy' target='_blank'>
                         Политика конфиденциальности
                     </Link>
                 </div>

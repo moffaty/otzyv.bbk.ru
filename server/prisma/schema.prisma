@@ -16,3 +16,15 @@ model Form {
   isSelected Boolean @default(false)
   checked    Boolean @default(false)
 }
+
+model ConsentLog {
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @default(now())
+  ipAddress       String
+  consentPersonal Boolean
+  consentContest  Boolean
+  consentDelivery Boolean
+  policyVersion   String
+  formUrl         String
+  formCode        String?
+}

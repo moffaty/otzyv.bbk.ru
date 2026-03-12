@@ -129,7 +129,9 @@ const initialFormState = {
     tg: '-',
     product: '',
     shop: '',
-    checkbox: '',
+    consentPersonal: false,
+    consentContest: false,
+    consentDelivery: false,
     model: '',
 }
 
@@ -213,9 +215,9 @@ function MainForm() {
         const name = form.name.trim()
         const surname = form.surname.trim()
         const fathername = form.fathername.trim()
-        if (!form.checkbox) {
+        if (!form.consentPersonal || !form.consentContest || !form.consentDelivery) {
             setIsLoading(false)
-            alert('Вам необходимо согласиться с условиями!')
+            alert('Необходимо принять все условия и согласия')
             return
         }
         if (Object.values(form).some((v) => !v)) {
@@ -345,6 +347,10 @@ function MainForm() {
             await postForm({
                 caption: sendingResult.data.result.caption,
                 photo: sendingResult.data.result.photo,
+                consentPersonal: form.consentPersonal,
+                consentContest: form.consentContest,
+                consentDelivery: form.consentDelivery,
+                formUrl: window.location.href,
             })
         } else {
             alert('Ошибка на стороне сервера! Обратитесь в поддержку')
@@ -366,6 +372,13 @@ function MainForm() {
         setForm((prev) => ({ ...prev, ['model']: e.target.value }))
     }
 
+    function handleToggleCheckbox(field) {
+        setForm((prev) => ({
+            ...prev,
+            [field]: !prev[field],
+        }))
+    }
+
     function handleToggleCustomShop(e) {
         setCustomShop(false)
         setForm((prev) => ({ ...prev, ['shop']: '' }))
@@ -378,13 +391,6 @@ function MainForm() {
             return
         }
         setForm((prev) => ({ ...prev, ['shop']: e.value }))
-    }
-    function handleSetAgreement(e) {
-        if (!form.checkbox) {
-            setForm((prev) => ({ ...prev, ['checkbox']: true }))
-        } else {
-            setForm((prev) => ({ ...prev, ['checkbox']: '' }))
-        }
     }
 
     const loadingState = isLoading || isFormLoading
@@ -572,24 +578,52 @@ function MainForm() {
                 <Container direction='column' className='dialogue-bg'>
                     <Container>
                         <Checkbox
-                            onClick={handleSetAgreement}
-                            isActive={form.checkbox}
+                            onClick={() => handleToggleCheckbox('consentPersonal')}
+                            isActive={form.consentPersonal}
                         />
                         <p className='normal'>
-                            Я ознакомлен и принимаю{' '}
+                            Я даю согласие на обработку персональных данных в соответствии с{' '}
                             <Link
-                                to='https://otzyv.bbk.ru/conditions'
-                                target='_blank'
+                                to='/privacy-policy'
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                условия конкурса
-                            </Link>{' '}
-                            и{' '}
-                            <Link
-                                to='https://otzyv.bbk.ru/soglasiye_na_obrabotku_personalnyh_dannyh'
-                                target='_blank'
-                            >
-                                обработку персональных данных
+                                Политикой конфиденциальности
                             </Link>
+                        </p>
+                    </Container>
+
+                    <Container>
+                        <Checkbox
+                            onClick={() => handleToggleCheckbox('consentContest')}
+                            isActive={form.consentContest}
+                        />
+                        <p className='normal'>
+                            Я принимаю{' '}
+                            <Link
+                                to='/contest-rules'
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                условия участия в конкурсе
+                            </Link>
+                        </p>
+                    </Container>
+
+                    <Container>
+                        <Checkbox
+                            onClick={() => handleToggleCheckbox('consentDelivery')}
+                            isActive={form.consentDelivery}
+                        />
+                        <p className='normal'>
+                            Я согласен на передачу моих данных курьерской службе для доставки приза{' '}
+                            (<Link
+                                to='/consent-delivery'
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                подробнее
+                            </Link>)
                         </p>
                     </Container>
                     <br />
