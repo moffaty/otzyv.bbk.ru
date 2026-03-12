@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import '../styles/docpage.css'
 
 function PrivacyPolicy() {
     return (
         <div className='doc-page'>
-            <Link to='/' className='doc-back-link'>← На главную</Link>
             <div className='doc-card'>
                 <h1>Политика в отношении обработки персональных данных</h1>
 

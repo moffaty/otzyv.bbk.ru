@@ -13,7 +13,7 @@
     border-radius: 20px;
     border: 2px solid var(--col-black);
     box-shadow: -5px 5px 0px 0px var(--col-black);
-    padding: 50px 40px;
+    padding: 50px 60px;
     width: 100%;
     max-width: 900px;
 }
@@ -54,17 +54,13 @@
     text-decoration: underline;
 }
 
-.doc-back-link {
-    font-size: var(--size-normal);
-    color: var(--col-white);
-    text-decoration: underline;
-    cursor: pointer;
-    align-self: flex-start;
-}
-
 @media screen and (max-width: 1300px) {
     .doc-page {
         padding: 60px 20px;
+    }
+
+    .doc-card {
+        padding: 40px 30px;
     }
 
     .doc-card h1 {
@@ -77,10 +73,6 @@
 
     .doc-card p,
     .doc-card ul {
-        font-size: var(--tablet-size-normal);
-    }
-
-    .doc-back-link {
         font-size: var(--tablet-size-normal);
     }
 }

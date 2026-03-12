@@ -5,7 +5,6 @@ import '../styles/docpage.css'
 function ConsentDelivery() {
     return (
         <div className='doc-page'>
-            <Link to='/' className='doc-back-link'>← На главную</Link>
             <div className='doc-card'>
                 <h1>Согласие на обработку персональных данных</h1>
 

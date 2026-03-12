@@ -5,7 +5,6 @@ import '../styles/docpage.css'
 function ContestRules() {
     return (
         <div className='doc-page'>
-            <Link to='/' className='doc-back-link'>← На главную</Link>
             <div className='doc-card'>
                 <h1>Условия участия в акции от BBK</h1>
 
