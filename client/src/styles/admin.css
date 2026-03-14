@@ -68,3 +68,31 @@
     border-radius: 12px;
     padding: 10px;
 }
+
+.forms__item__row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+}
+
+.forms__item__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.forms__item__text {
+    font-size: 13px;
+    color: var(--col-black);
+    word-break: break-word;
+}
+
+.logs-table {
+    width: 100%;
+    background-color: var(--col-white);
+    border-radius: 12px;
+    overflow: hidden;
+}

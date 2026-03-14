@@ -576,7 +576,7 @@ function MainForm() {
                     <img className='panda' src={panda3} />
                 </Container>
                 <Container direction='column' className='dialogue-bg'>
-                    <Container>
+                    <Container justify='flex-start' align='flex-start'>
                         <Checkbox
                             onClick={() => handleToggleCheckbox('consentPersonal')}
                             isActive={form.consentPersonal}
@@ -593,7 +593,7 @@ function MainForm() {
                         </p>
                     </Container>
 
-                    <Container>
+                    <Container justify='flex-start' align='flex-start'>
                         <Checkbox
                             onClick={() => handleToggleCheckbox('consentContest')}
                             isActive={form.consentContest}
@@ -610,7 +610,7 @@ function MainForm() {
                         </p>
                     </Container>
 
-                    <Container>
+                    <Container justify='flex-start' align='flex-start'>
                         <Checkbox
                             onClick={() => handleToggleCheckbox('consentDelivery')}
                             isActive={form.consentDelivery}

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const mainApi = createApi({
     reducerPath: 'mainApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://anketa.bbk-otzyv.ru' }),
+    baseQuery: fetchBaseQuery({ baseUrl: '' }),
     tagTypes: ['RandomForm'],
     endpoints: (builder) => ({
         registerForm: builder.mutation({
@@ -38,6 +38,11 @@ export const mainApi = createApi({
                 body: body,
             }),
         }),
+        getConsentLogs: builder.query({
+            query: (params) => ({
+                url: `/api/admin/consent-logs?pwd=${params.pwd}&perPage=${params.perPage}&page=${params.page}`,
+            }),
+        }),
     }),
 })
 
@@ -47,4 +52,5 @@ export const {
     useDeleteFormMutation,
     useGetRandomFormQuery,
     useApproveFormMutation,
+    useLazyGetConsentLogsQuery,
 } = mainApi

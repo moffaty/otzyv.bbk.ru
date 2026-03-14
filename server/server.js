@@ -349,6 +349,33 @@ app.get('/api/admin/getforms', async (req, res) => {
     }
 })
 
+app.get('/api/admin/consent-logs', async (req, res) => {
+    try {
+        const { pwd, page = 1, perPage = 20 } = req.query
+
+        if (pwd != admin_pwd) {
+            return res.status(400).json({ error: true, message: 'Invalid password' })
+        }
+
+        const pageInt = parseInt(page)
+        const perPageInt = parseInt(perPage)
+
+        const [logs, totalCount] = await Promise.all([
+            prisma.consentLog.findMany({
+                skip: (pageInt - 1) * perPageInt,
+                take: perPageInt,
+                orderBy: { createdAt: 'desc' },
+            }),
+            prisma.consentLog.count(),
+        ])
+
+        return res.status(200).json({ logs, totalCount })
+    } catch (e) {
+        console.log(e)
+        return res.status(400).json({ error: true })
+    }
+})
+
 // Start the server
 app.listen(port, async () => {
     console.log(`Server listening on  http://localhost:${port}`)
